@@ -86,7 +86,7 @@ window.onload = function () {
         data: [{
             type: "spline",
             lineColor: "#f5c542",
-            yValueFormatString: "####.3",
+            yValueFormatString: "####.#",
             dataPoints: dataPointsPressure2
         }]
     };
@@ -205,7 +205,7 @@ window.onload = function () {
     }
     function addPressure2(data) {
         for (var i = 1; i < 778; i++) {
-            var pressure = data[i]["Pressure Run 1__1"];
+            var pressure2 = data[i]["Pressure Run 1__1"];
             var time = data[i]["Time"];
             var t = new Date(2022, 11, 3); // Epoch
             var minutes = Math.floor(time / 60);
@@ -215,7 +215,7 @@ window.onload = function () {
 
             dataPointsPressure2.push({
                 x: t,
-                y: pressure
+                y: pressure2
             });
         }
         $("#pressure2Chart").CanvasJSChart(pressure2Options);
