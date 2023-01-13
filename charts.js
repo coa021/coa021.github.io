@@ -35,7 +35,7 @@ window.onload = function () {
             type: "spline",
             lineColor: "#0000ff",
             
-            yValueFormatString: "####",
+            yValueFormatString: "####.#",
             dataPoints: dataPointsHumidity
         }]
     };
@@ -55,13 +55,13 @@ window.onload = function () {
             intervalType: "minute"
         },
         axisY: {
-            title: "Pressure (Pa)",
+            title: "Pressure (kPa)",
             titleFontSize: 24
         },
         data: [{
             type: "spline",
             lineColor: "#ae00ff",
-            yValueFormatString: "####",
+            yValueFormatString: "####.#",
             dataPoints: dataPointsPressure
         }]
     };
@@ -80,13 +80,13 @@ window.onload = function () {
             intervalType: "minute"
         },
         axisY: {
-            title: "Pressure (Pa)",
+            title: "Pressure (kPa)",
             titleFontSize: 24
         },
         data: [{
             type: "spline",
             lineColor: "#f5c542",
-            yValueFormatString: "####",
+            yValueFormatString: "####.3",
             dataPoints: dataPointsPressure2
         }]
     };
@@ -111,7 +111,7 @@ window.onload = function () {
         data: [{
             type: "spline",
             lineColor: "#ff0088",
-            yValueFormatString: "####",
+            yValueFormatString: "####.#",
             dataPoints: dataPointsLight
         }]
     };
@@ -136,7 +136,7 @@ window.onload = function () {
         data: [{
             type: "spline",
             lineColor: "#00ff00",
-            yValueFormatString: "####",
+            yValueFormatString: "####.#",
             dataPoints: dataPointsSound
         }]
     };
@@ -163,7 +163,7 @@ window.onload = function () {
         data: [{
             type: "spline",
             lineColor: "#FF0000",
-            yValueFormatString: "####",
+            yValueFormatString: "####.#",
             dataPoints: dataPointsTemperature
         }]
     };
