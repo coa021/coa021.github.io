@@ -34,7 +34,7 @@ window.onload = function () {
         data: [{
             type: "spline",
             lineColor: "#0000ff",
-            
+            xValueFormatString: "mm:ss",
             yValueFormatString: "####.#",
             dataPoints: dataPointsHumidity
         }]
@@ -61,6 +61,7 @@ window.onload = function () {
         data: [{
             type: "spline",
             lineColor: "#ae00ff",
+            xValueFormatString: "mm:ss",
             yValueFormatString: "####.#",
             dataPoints: dataPointsPressure
         }]
@@ -86,6 +87,7 @@ window.onload = function () {
         data: [{
             type: "spline",
             lineColor: "#f5c542",
+            xValueFormatString: "mm:ss",
             yValueFormatString: "####.#",
             dataPoints: dataPointsPressure2
         }]
@@ -111,6 +113,7 @@ window.onload = function () {
         data: [{
             type: "spline",
             lineColor: "#ff0088",
+            xValueFormatString: "mm:ss",
             yValueFormatString: "####.#",
             dataPoints: dataPointsLight
         }]
@@ -136,6 +139,7 @@ window.onload = function () {
         data: [{
             type: "spline",
             lineColor: "#00ff00",
+            xValueFormatString: "mm:ss",
             yValueFormatString: "####.#",
             dataPoints: dataPointsSound
         }]
@@ -163,6 +167,7 @@ window.onload = function () {
         data: [{
             type: "spline",
             lineColor: "#FF0000",
+            xValueFormatString: "mm:ss",
             yValueFormatString: "####.#",
             dataPoints: dataPointsTemperature
         }]
