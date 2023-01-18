@@ -15,15 +15,13 @@ window.onload = function () {
     var humidityOptions = {
         colorSet: "#FF0000",
         animationEnabled: true,
-        
-
         theme: "light2",
         title: {
             text: "Humidity Graph"
         },
         axisX: {
             valueFormatString: "mm:ss",
-            title :"Time (mm:ss)",
+            title: "Time (mm:ss)",
             interval: 1,
             intervalType: "minute"
         },
@@ -40,17 +38,49 @@ window.onload = function () {
         }]
     };
 
+    var bothPressureOptions = {
+        animationEnabled: true,
+        theme: "light2",
+        title: {
+            text: "Both Pressure Graphs"
+        },
+        axisX: {
+            valueFormatString: "mm:ss",
+            title: "Time (mm:ss)",
+            interval: 1,
+            intervalType: "minute"
+        },
+        axisY: {
+            title: "Pressure (kPa)",
+            titleFontSize: 24
+        },
+        data: [{
+            type: "spline",
+            lineColor: "#ae00ff",
+            xValueFormatString: "mm:ss",
+            yValueFormatString: "####.#",
+            axisYIndex: 0, //defaults to 0
+            dataPoints: dataPointsPressure
+        },
+        {
+            type: "spline",
+            axisYIndex: 1,
+            xValueFormatString: "mm:ss",
+            dataPoints: dataPointsPressure2
+        }]
+    };
+
     var pressureOptions = {
         animationEnabled: true,
         theme: "light2",
-        
+
 
         title: {
             text: "Pressure Graph Nr. 1"
         },
         axisX: {
             valueFormatString: "mm:ss",
-            title :"Time (mm:ss)",
+            title: "Time (mm:ss)",
             interval: 1,
             intervalType: "minute"
         },
@@ -70,13 +100,13 @@ window.onload = function () {
     var pressure2Options = {
         animationEnabled: true,
         theme: "light2",
-        
+
         title: {
             text: "Pressure Graph Nr. 2"
         },
         axisX: {
             valueFormatString: "mm:ss",
-            title :"Time (mm:ss)",
+            title: "Time (mm:ss)",
             interval: 1,
             intervalType: "minute"
         },
@@ -96,13 +126,13 @@ window.onload = function () {
     var lightOptions = {
         animationEnabled: true,
         theme: "light2",
-        
+
         title: {
             text: "Light Graph"
         },
         axisX: {
             valueFormatString: "mm:ss",
-            title :"Time (mm:ss)",
+            title: "Time (mm:ss)",
             interval: 1,
             intervalType: "minute"
         },
@@ -122,13 +152,12 @@ window.onload = function () {
     var soundOptions = {
         animationEnabled: true,
         theme: "light2",
-        //,
         title: {
             text: "Sound Graph"
         },
         axisX: {
             valueFormatString: "mm:ss",
-            title :"Time (mm:ss)",
+            title: "Time (mm:ss)",
             interval: 1,
             intervalType: "minute"
         },
@@ -148,17 +177,17 @@ window.onload = function () {
     var temperatureOptions = {
         animationEnabled: true,
         theme: "light2",
-        
+
         title: {
             text: "Temperature Graph"
         },
         axisX: {
 
             valueFormatString: "mm:ss",
-            title :"Time (mm:ss)",
+            title: "Time (mm:ss)",
             interval: 1,
             intervalType: "minute"
-            
+
         },
         axisY: {
             title: "Temperature (°C)",
@@ -173,114 +202,56 @@ window.onload = function () {
         }]
     };
 
-
-    function addHumudity(data) {
+    function drawGraphs(data) {
         for (var i = 1; i < 778; i++) {
             var humidity = data[i]["Humidity Run 1"];
+            var pressure = data[i]["Pressure Run 1"];
+            var pressure2 = data[i]["Pressure Run 1__1"];
+            var light = data[i]["Light Run 1"];
+            var sound = data[i]["Sound Run 1"];
+            var temp = data[i]["Temperature Run 1"];
+
             var time = data[i]["Time"];
             var t = new Date(2022, 11, 3); // Epoch
             var minutes = Math.floor(time / 60);
             var seconds = time - minutes * 60;
             t.setMinutes(minutes);
             t.setSeconds(seconds);
-             
+
             dataPointsHumidity.push({
                 x: t,
                 y: humidity
             });
-        }
-        $("#humidityChart").CanvasJSChart(humidityOptions);
-    }
-    function addPressure(data) {
-        for (var i = 1; i < 778; i++) {
-            var pressure = data[i]["Pressure Run 1"];
-            var time = data[i]["Time"];
-            var t = new Date(2022, 11, 3); // Epoch
-            var minutes = Math.floor(time / 60);
-            var seconds = time - minutes * 60;
-            t.setMinutes(minutes);
-            t.setSeconds(seconds);
-
             dataPointsPressure.push({
                 x: t,
-                y: pressure
-            });
-        }
-        $("#pressureChart").CanvasJSChart(pressureOptions);
-    }
-    function addPressure2(data) {
-        for (var i = 1; i < 778; i++) {
-            var pressure2 = data[i]["Pressure Run 1__1"];
-            var time = data[i]["Time"];
-            var t = new Date(2022, 11, 3); // Epoch
-            var minutes = Math.floor(time / 60);
-            var seconds = time - minutes * 60;
-            t.setMinutes(minutes);
-            t.setSeconds(seconds);
+                y: pressure,
 
+            });
             dataPointsPressure2.push({
                 x: t,
                 y: pressure2
             });
-        }
-        $("#pressure2Chart").CanvasJSChart(pressure2Options);
-    }
-    function addLight(data) {
-        for (var i = 1; i < 778; i++) {
-            var light = data[i]["Light Run 1"];
-            var time = data[i]["Time"];
-            var t = new Date(2022, 11, 3); // Epoch
-            var minutes = Math.floor(time / 60);
-            var seconds = time - minutes * 60;
-            t.setMinutes(minutes);
-            t.setSeconds(seconds);
-
             dataPointsLight.push({
                 x: t,
                 y: light
             });
-        }
-        $("#lightChart").CanvasJSChart(lightOptions);
-    }
-    function addSound(data) {
-        for (var i = 1; i < 778; i++) {
-            var sound = data[i]["Sound Run 1"];
-            var time = data[i]["Time"];
-            var t = new Date(2022, 11, 3); // Epoch
-            var minutes = Math.floor(time / 60);
-            var seconds = time - minutes * 60;
-            t.setMinutes(minutes);
-            t.setSeconds(seconds);
-
             dataPointsSound.push({
                 x: t,
                 y: sound
             });
-        }
-        $("#soundChart").CanvasJSChart(soundOptions);
-    }
-    function addTemperature(data) {
-        for (var i = 1; i < 778; i++) {
-            var temp = data[i]["Temperature Run 1"];
-            var time = data[i]["Time"];
-            var t = new Date(2022, 11, 3); // Epoch
-            var minutes = Math.floor(time / 60);
-            var seconds = time - minutes * 60;
-            t.setMinutes(minutes);
-            t.setSeconds(seconds);
-
             dataPointsTemperature.push({
                 x: t,
                 y: temp
             });
         }
+        
+        $("#humidityChart").CanvasJSChart(humidityOptions);
+        $("#bothPressureCharts").CanvasJSChart(bothPressureOptions);
+        $("#pressureChart").CanvasJSChart(pressureOptions);
+        $("#pressure2Chart").CanvasJSChart(pressure2Options);
+        $("#lightChart").CanvasJSChart(lightOptions);
+        $("#soundChart").CanvasJSChart(soundOptions);
         $("#temperatureChart").CanvasJSChart(temperatureOptions);
     }
-    $.getJSON("csvjson.json", addHumudity);
-    $.getJSON("csvjson.json", addPressure);
-    $.getJSON("csvjson.json", addPressure2);
-    $.getJSON("csvjson.json", addLight);
-    $.getJSON("csvjson.json", addSound);
-    $.getJSON("csvjson.json", addTemperature);
-
+    $.getJSON("csvjson.json", drawGraphs);
 }

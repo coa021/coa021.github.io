@@ -1,9 +1,19 @@
-
 .graph-options {
-    height: 370px; 
-    width: 1200px; 
-    margin: 50px auto;
+    height: 370px;
+    width: 1200px;
+    margin: 100px auto;
 }
+
+
+.info-container {
+    margin: 0 auto;
+    width: 50%;
+}
+
+#home-page {
+    height: 100%;
+}
+
 
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&display=swap');
 
@@ -16,7 +26,7 @@
     --calendar-today-color: linear-gradient(to bottom, #03a9f4, #2196f3);
     --calendar-today-innerborder-color: transparent;
     --calendar-nextprev-bg-color: transparent;
-    --next-prev-arrow-color : #FFF;
+    --next-prev-arrow-color: #FFF;
     --calendar-border-radius: 16px;
     --calendar-prevnext-date-color: #484848
 }
@@ -29,7 +39,8 @@
 .calendar {
     font-family: 'IBM Plex Sans', sans-serif;
     position: relative;
-    max-width: 400px; /*change as per your design need */
+    max-width: 400px;
+    /*change as per your design need */
     min-width: 320px;
     background: var(--calendar-bg-color);
     color: var(--calendar-font-color);
@@ -150,7 +161,7 @@
 }
 
 .calendar .calendar-inner .calendar-controls .calendar-next a svg path,
-.calendar .calendar-inner .calendar-controls .calendar-prev a svg path{
+.calendar .calendar-inner .calendar-controls .calendar-prev a svg path {
     fill: var(--next-prev-arrow-color);
 }
 
@@ -161,6 +172,6 @@
 
 .calendar .calendar-inner .calendar-body .prev-dates:hover,
 .calendar .calendar-inner .calendar-body .next-dates:hover {
-  border: 1px solid transparent;
-  pointer-events: none;
+    border: 1px solid transparent;
+    pointer-events: none;
 }
