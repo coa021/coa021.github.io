@@ -32,8 +32,9 @@ window.onload = function () {
         data: [{
             type: "spline",
             lineColor: "#0000ff",
+            color: "#0000ff",
             xValueFormatString: "mm:ss",
-            yValueFormatString: "####.#",
+            yValueFormatString: "##.# '%'",
             dataPoints: dataPointsHumidity
         }]
     };
@@ -58,14 +59,18 @@ window.onload = function () {
             type: "spline",
             lineColor: "#ae00ff",
             xValueFormatString: "mm:ss",
-            yValueFormatString: "####.#",
+            yValueFormatString: "####.## kPa",
             axisYIndex: 0, //defaults to 0
+            color: "#ae00ff",
             dataPoints: dataPointsPressure
         },
         {
             type: "spline",
             axisYIndex: 1,
+            lineColor: "#05a0ff",
             xValueFormatString: "mm:ss",
+            yValueFormatString: "####.## kPa",
+            color: "#05a0ff",
             dataPoints: dataPointsPressure2
         }]
     };
@@ -92,7 +97,8 @@ window.onload = function () {
             type: "spline",
             lineColor: "#ae00ff",
             xValueFormatString: "mm:ss",
-            yValueFormatString: "####.#",
+            yValueFormatString: "####.## kPa",
+            color: "#ae00ff",
             dataPoints: dataPointsPressure
         }]
     };
@@ -118,7 +124,8 @@ window.onload = function () {
             type: "spline",
             lineColor: "#f5c542",
             xValueFormatString: "mm:ss",
-            yValueFormatString: "####.#",
+            yValueFormatString: "####.## kPa",
+            color: "#f5c542",
             dataPoints: dataPointsPressure2
         }]
     };
@@ -144,7 +151,8 @@ window.onload = function () {
             type: "spline",
             lineColor: "#ff0088",
             xValueFormatString: "mm:ss",
-            yValueFormatString: "####.#",
+            yValueFormatString: "####.# lm",
+            color: "#ff0088",
             dataPoints: dataPointsLight
         }]
     };
@@ -169,7 +177,8 @@ window.onload = function () {
             type: "spline",
             lineColor: "#00ff00",
             xValueFormatString: "mm:ss",
-            yValueFormatString: "####.#",
+            yValueFormatString: "####.# dB",
+            color: "#00ff00",
             dataPoints: dataPointsSound
         }]
     };
@@ -197,7 +206,8 @@ window.onload = function () {
             type: "spline",
             lineColor: "#FF0000",
             xValueFormatString: "mm:ss",
-            yValueFormatString: "####.#",
+            yValueFormatString: "####.# °C",
+            color: "#FF0000",
             dataPoints: dataPointsTemperature
         }]
     };
